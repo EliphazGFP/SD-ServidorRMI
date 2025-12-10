@@ -1,12 +1,25 @@
-# Comunicação entre processo: Java RMI - permitem chamar procedimentos/métodos remotamente
-![alt text](image.png)
+# SD-RMIJava
 
-# Atividade Prática
-* Criar seu repositório no github em seu perfil com os programas;
-* Compilar os programas "javac *.java";
-* Executar o comando "rmic HelloServer";
-* Executar o comando "rmiregistry &";
-* Executar o programa "java HelloServer";
-* Executar o programa "java HelloCliente localhost" (outra janela bash);
-* Tirar os print de execução e realizar o upload no seu repositório;
-* Enviar o link do seu repositório como resposta da atividade;
+Atividade: Java RMI - Chamada de Métodos Remotos  
+Disciplina: Sistemas Distribuídos - IFPR
+
+## Objetivo
+Demonstrar comunicação cliente-servidor usando Java RMI (Remote Method Invocation).
+
+## Passo a passo de execução (testado no Codespace)
+
+```bash
+# 1. Compilar tudo
+javac *.java
+
+# 2. Gerar o stub (obrigatório no RMI clássico)
+rmic HelloServer
+
+# 3. Iniciar o registro RMI em background
+rmiregistry &
+
+# 4. Iniciar o servidor (em uma aba)
+java HelloServer
+
+# 5. Em outra aba, executar o cliente
+java HelloCliente localhost
